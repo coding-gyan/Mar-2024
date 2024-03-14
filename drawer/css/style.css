@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #040D12;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn {
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+}
+
+.drawer {
+    width: calc(100% - 40px);
+    border-radius: 6px;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    background: linear-gradient(to right, #000000af, #040d12a0);
+    backdrop-filter: blur(30px);
+    z-index: 999999;
+    display: flex;
+    justify-content: space-between;
+    transition: transform .4s;
+}
+
+.drawer.active {
+    transform: translate(-50%, 0%);
+}
+
+.drawer .drawer__right a {
+    padding: 5px;
+    color: aliceblue;
+    position: relative;
+    font-size: 22px;
+}
+
+.drawer .drawer__right a span {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.489);
+    font-size: 8px;
+    display: none;
+    border-radius: 5px;
+}
+
+.drawer .drawer__right a:hover span {
+    display: block;
+}
+
+.overlay {
+    width: calc(100% - 15px);
+    height: calc(100vh - 15px);
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    background: rgba(43, 43, 43, 0.352); 
+    backdrop-filter: blur(3px);
+    z-index: 99999;
+    transform-origin: top;
+    transform: translate(-50%, -50%) scaleY(0);
+    transition: transform .4s;
+}
+
+.overlay.active {
+    transform: translate(-50%, -50%) scale(1);
+}
